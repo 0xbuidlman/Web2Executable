@@ -1096,7 +1096,7 @@ class ICNSElement(Structure):
             magic_read = data[:8]
 
             if magic_png == magic_read:
-                png_file = png.Reader(bytes=data)
+                png_file = png.Reader(bytes=str(data))
 
                 width, height, png_data, stats_dict = png_file.read_flat()
 
@@ -1110,7 +1110,7 @@ class ICNSElement(Structure):
                 icns_info.iconChannels = 4 if bpp == 32 else 1
                 icns_info.iconPixelDepth = bpp / icns_info.iconChannels
                 icns_info.iconRawDataSize = width * height * 4
-                icns_info.data = bytearray(list(png_data))
+                icns_info.data = bytearray(data)
             else:
                 image = Image.open(StringIO(data))
                 mode_to_bpp = {'1':1, 'L':8, 'P':8, 'RGB':24, 'RGBA':32, 'CMYK':32, 'YCbCr':24, 'I':32, 'F':32}

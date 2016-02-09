@@ -28,7 +28,7 @@ cp -rf files Web2Executable.app/Contents/MacOS/
 
 rm -rf build dist
 
-/Applications/Keka.app/Contents/Resources/keka7z a -r Web2ExeMac-CMD.zip Web2ExeMac-CMD
-/Applications/Keka.app/Contents/Resources/keka7z a -r Web2ExeMac-${VERSION}.zip Web2Executable.app
+/Applications/Keka.app/Contents/Resources/keka7z a -r Web2ExeMac-CMD-Py2.zip Web2ExeMac-CMD
+/Applications/Keka.app/Contents/Resources/keka7z a -r Web2ExeMac-${VERSION}-Py2.zip Web2Executable.app
 
 python upload_release.py
